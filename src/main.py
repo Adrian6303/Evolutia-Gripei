@@ -1,17 +1,58 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import StratifiedKFold
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+from sklearn.model_selection import learning_curve
+import numpy as np
 
-# Datele tale
+
+# Locatii fisiere
 input_path1 = 'Dataset\Dataset1.xlsx'
 input_path2 = 'Dataset\Dataset2.xlsx'
 output_path1 = 'output\output_Data1.txt'
 output_path2 = 'output\output_Data2.txt'
+plot_path1 = 'output\learning_curve_Data1.png'
+plot_path2 = 'output\learning_curve_Data2.png'
+
+# Functie pentru plotarea learning curve
+def plot_learning_curve(estimator, title, X, y, cv=None, n_jobs=None, train_sizes=np.linspace(0.1, 1.0, 5), output_path='learning_curve.png'):
+    plt.figure()
+    plt.title(title)
+    plt.xlabel("Training examples")
+    plt.ylabel("Score")
+
+    if cv is None:
+        cv = StratifiedKFold(n_splits=5)
+
+    train_sizes, train_scores, test_scores = learning_curve(
+        estimator, X, y, cv=cv, n_jobs=n_jobs, train_sizes=train_sizes
+    )
+    train_scores_mean = np.mean(train_scores, axis=1)
+    train_scores_std = np.std(train_scores, axis=1)
+    test_scores_mean = np.mean(test_scores, axis=1)
+    test_scores_std = np.std(test_scores, axis=1)
+
+    plt.grid()
+
+    plt.fill_between(train_sizes, train_scores_mean - train_scores_std,
+                     train_scores_mean + train_scores_std, alpha=0.1,
+                     color="r")
+    plt.fill_between(train_sizes, test_scores_mean - test_scores_std,
+                     test_scores_mean + test_scores_std, alpha=0.1, color="g")
+    plt.plot(train_sizes, train_scores_mean, 'o-', color="r",
+             label="Training score")
+    plt.plot(train_sizes, test_scores_mean, 'o-', color="g",
+             label="Cross-validation score")
+
+    plt.legend(loc="best")
+    plt.savefig(output_path)
+    plt.close()
 
 
-def logistic_regression(inputpath, outputPath):
+# Functie Logistic Regression
+def logistic_regression(inputpath, outputPath, plotPath):
     # Citirea datelor
     data = pd.read_excel(inputpath, sheet_name='Sheet1')
 
@@ -34,6 +75,10 @@ def logistic_regression(inputpath, outputPath):
     # Antrenarea modelului Logistic Regression
     model = LogisticRegression(max_iter=1000)
     model.fit(X_train_scaled, y_train)
+
+    # Plot learning curve
+    #plot_learning_curve(model, "Learning Curve (Logistic Regression)", X_train_scaled, y_train, cv=5, output_path=plotPath)
+
 
     # Predicții pe setul de testare
     predictions = model.predict(X_test_scaled)
@@ -61,5 +106,5 @@ def logistic_regression(inputpath, outputPath):
         f.write(feature_importance.to_string(index=False))
 
 
-logistic_regression(input_path1, output_path1)
-logistic_regression(input_path2, output_path2)
+logistic_regression(input_path1, output_path1, plot_path1)
+logistic_regression(input_path2, output_path2, plot_path2)
