@@ -1,0 +1,123 @@
+Train data procentage:0.75
+Test data procentage:0.25
+
+Acuratețea modelului: 0.7
+
+
+Raport de clasificare:
+              precision    recall  f1-score   support
+
+        high       0.50      0.33      0.40         3
+         low       0.75      0.86      0.80         7
+
+    accuracy                           0.70        10
+   macro avg       0.62      0.60      0.60        10
+weighted avg       0.68      0.70      0.68        10
+
+
+
+Feature importance:
+                     Feature  Coefficient
+          IgD+ CD27+ B cells     0.408192
+                         IL6     0.364492
+                   L50 ICAM1     0.343101
+               naive B cells     0.340491
+          CD27+ CD8+ T cells     0.337957
+          CD28+ CD8+ T cells     0.330128
+                    L50 TNFA     0.300344
+                    L50 IL13     0.270425
+                    L50 MCP1     0.262170
+          naive CD8+ T cells     0.260786
+                    L50 IL10     0.247770
+                    L50 GROA     0.239428
+ central memory CD8+ T cells     0.237196
+                    L50 VEGF     0.227823
+             HLADR+ NK cells     0.214836
+                    L50 MCSF     0.211354
+                         IL8     0.196612
+                    L50 TGFA     0.191206
+   HLADR+ CD38- CD8+ T cells     0.191047
+          CD94+ CD4+ T cells     0.178318
+                    L50 IFNA     0.177536
+ central memory CD4+ T cells     0.160528
+        CD161- CD45RA+ Tregs     0.155838
+                    L50 TNFB     0.155701
+          CD4+ CD27+ T cells     0.155298
+   HLADR- CD38+ CD8+ T cells     0.150833
+   HLADR+ CD38+ CD8+ T cells     0.145462
+                CD4+ T cells     0.142420
+                     L50 IL5     0.127001
+                    L50 IL1B     0.125091
+         CD161+ CD4+ T cells     0.117696
+                  L50 PDGFBB     0.115583
+                     L50 IL4     0.113496
+                     L50 IL6     0.107709
+                  L50 RANTES     0.105164
+   HLADR- CD38+ CD4+ T cells     0.098849
+                   L50 GMCSF     0.097823
+             CD161+ NK cells     0.097508
+          IgD+ CD27- B cells     0.092547
+                   L50 ENA78     0.078438
+                  L50 LEPTIN     0.078290
+   HLADR+ CD38+ CD4+ T cells     0.076272
+                   L50 CD40L     0.073765
+                    NK cells     0.069965
+        transitional B cells     0.067885
+                       Tregs     0.066968
+        CD161+ CD45RA- Tregs     0.063205
+                        IL1B     0.058009
+   HLADR+ CD38- CD4+ T cells     0.057806
+                     L50 IL7     0.056888
+                    L50 IP10     0.050391
+              CD94+ NK cells     0.049818
+                    L50 MCP3     0.036620
+         CD85j+ CD4+ T cells     0.036247
+                   L50 VCAM1     0.036031
+                    L50 IFNB     0.031479
+                     L50 NGF     0.029823
+                    L50 IL1A     0.025666
+          naive CD4+ T cells     0.023488
+        CD161+ CD45RA+ Tregs     0.016889
+          CD4+ CD28+ T cells     0.015960
+                     B cells     0.005203
+                   NKT cells     0.001291
+                    L50 FGFB    -0.004049
+                   L50 IL1RA    -0.005552
+                    L50 FASL    -0.011931
+                    L50 IFNG    -0.026318
+                    L50 TGFB    -0.026755
+                     L50 MIG    -0.041358
+                     L50 LIF    -0.049949
+                   L50 IL17F    -0.055278
+                    L50 IL17    -0.056704
+                   L50 MIP1A    -0.057381
+                     L50 SCF    -0.059122
+                L50 RESISTIN    -0.062209
+                 L50 IL12P70    -0.062985
+          IgD- CD27+ B cells    -0.064157
+                    L50 IL15    -0.067600
+        gamma- delta T cells    -0.071437
+                    L50 GCSF    -0.074576
+                     L50 IL2    -0.084546
+                     L50 IL8    -0.087403
+                 L50 IL12P40    -0.088950
+                 L50 EOTAXIN    -0.095824
+                CD8+ T cells    -0.100807
+             CD16+ monocytes    -0.117108
+                    L50 PAI1    -0.139193
+                   L50 MIP1B    -0.148842
+       effector CD4+ T cells    -0.157356
+effector memory CD8+ T cells    -0.178020
+         CD85j+ CD8+ T cells    -0.192319
+         CD161+ CD8+ T cells    -0.217552
+effector memory CD4+ T cells    -0.232719
+                plasmablasts    -0.267791
+          CD94+ CD8+ T cells    -0.296874
+                     L50 HGF    -0.300558
+                     T cells    -0.312433
+          IgD- CD27- B cells    -0.316458
+              memory B cells    -0.320819
+                        TNFA    -0.321153
+                   L50 TRAIL    -0.350796
+                   monocytes    -0.424719
+       effector CD8+ T cells    -0.491920
