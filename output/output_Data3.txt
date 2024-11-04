@@ -1,0 +1,68 @@
+Train data procentage:0.6039603960396039
+Test data procentage:0.39603960396039606
+
+Acuratețea modelului: 0.525
+
+
+Raport de clasificare:
+              precision    recall  f1-score   support
+
+        high       0.00      0.00      0.00        12
+         low       0.64      0.75      0.69        28
+
+    accuracy                           0.53        40
+   macro avg       0.32      0.38      0.34        40
+weighted avg       0.45      0.53      0.48        40
+
+
+
+Feature importance:
+                     Feature  Coefficient
+        gamma- delta T cells     0.916576
+   HLADR+ CD38+ CD4+ T cells     0.581723
+                plasmablasts     0.387568
+          CD27+ CD8+ T cells     0.377399
+             CD16+ monocytes     0.345462
+                   NKT cells     0.343450
+         CD161+ CD8+ T cells     0.284975
+          IgD+ CD27+ B cells     0.259718
+          naive CD8+ T cells     0.242031
+              CD94+ NK cells     0.241007
+             HLADR+ NK cells     0.238419
+         CD85j+ CD8+ T cells     0.225984
+          IgD- CD27+ B cells     0.217899
+          naive CD4+ T cells     0.213941
+   HLADR+ CD38- CD4+ T cells     0.148113
+        CD161+ CD45RA+ Tregs     0.132443
+effector memory CD4+ T cells     0.106433
+             CD161+ NK cells     0.101684
+              memory B cells     0.025170
+effector memory CD8+ T cells     0.002193
+                    NK cells    -0.013898
+                     B cells    -0.037676
+          IgD- CD27- B cells    -0.052647
+               naive B cells    -0.054102
+   HLADR- CD38+ CD8+ T cells    -0.079174
+                CD4+ T cells    -0.087334
+ central memory CD8+ T cells    -0.104929
+        transitional B cells    -0.175336
+       effector CD4+ T cells    -0.184604
+         CD85j+ CD4+ T cells    -0.200959
+          CD94+ CD4+ T cells    -0.209304
+          IgD+ CD27- B cells    -0.209392
+                       Tregs    -0.275432
+   HLADR+ CD38+ CD8+ T cells    -0.330176
+          CD94+ CD8+ T cells    -0.350335
+       effector CD8+ T cells    -0.366885
+          CD4+ CD27+ T cells    -0.417712
+          CD4+ CD28+ T cells    -0.461741
+          CD28+ CD8+ T cells    -0.462475
+                   monocytes    -0.465171
+                CD8+ T cells    -0.541006
+ central memory CD4+ T cells    -0.578344
+         CD161+ CD4+ T cells    -0.619923
+   HLADR+ CD38- CD8+ T cells    -0.661600
+   HLADR- CD38+ CD4+ T cells    -0.683205
+                     T cells    -0.883710
+        CD161+ CD45RA- Tregs    -0.937374
+        CD161- CD45RA+ Tregs    -0.948414
