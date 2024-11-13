@@ -6,6 +6,8 @@ from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 from sklearn.model_selection import learning_curve
 import numpy as np
+from sklearn.tree import DecisionTreeClassifier
+from imblearn.over_sampling import SMOTE
 
 
 # Locatii fisiere
@@ -13,8 +15,12 @@ input_path1 = 'Dataset\Dataset1.xlsx'
 input_path2 = 'Dataset\Dataset2.xlsx'
 output_path1 = 'output\output_Data1.txt'
 output_path2 = 'output\output_Data2.txt'
+output_path4 = 'output\output_Data4.txt'
+output_path5 = 'output\output_Data5.txt'
 plot_path1 = 'output\learning_curve_Data1.png'
 plot_path2 = 'output\learning_curve_Data2.png'
+plot_path4 = 'output\learning_curve_Data4.png'
+plot_path5 = 'output\learning_curve_Data5.png'
 
 # Functie pentru plotarea learning curve
 def plot_learning_curve(estimator, title, X, y, cv=None, n_jobs=None, train_sizes=np.linspace(0.1, 1.0, 5), output_path='learning_curve.png'):
@@ -106,5 +112,67 @@ def logistic_regression(inputpath, outputPath, plotPath):
         f.write(feature_importance.to_string(index=False))
 
 
-logistic_regression(input_path1, output_path1, plot_path1)
-logistic_regression(input_path2, output_path2, plot_path2)
+def decision_tree(inputpath, outputPath, plotPath):
+    # Citirea datelor
+    data = pd.read_excel(inputpath, sheet_name='Sheet1')
+
+    # Separați seturile de training și testing
+    train_data = data[data['type'] == 'training']
+    test_data = data[data['type'] == 'testing']
+
+    # Selectarea caracteristicilor și a țintei
+    X_train = train_data.drop(columns=['Donor ID', 'outcome', 'type'])
+    y_train = train_data['outcome']
+    X_test = test_data.drop(columns=['Donor ID', 'outcome', 'type'])
+    y_test = test_data['outcome']
+
+    # Check class distribution
+    print("Class distribution in training set:")
+    print(y_train.value_counts())
+
+    # Handle imbalanced dataset using SMOTE
+    smote = SMOTE()
+    X_train_resampled, y_train_resampled = smote.fit_resample(X_train, y_train)
+
+    # Scale the data
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train_resampled)
+    X_test_scaled = scaler.transform(X_test)
+
+    # Train the model
+    model = DecisionTreeClassifier()
+    model.fit(X_train_scaled, y_train_resampled)
+
+    # Plot learning curve and save as image
+    plot_learning_curve(model, "Learning Curve (Decision Tree)", X_train_scaled, y_train_resampled, cv=StratifiedKFold(n_splits=5), output_path=plotPath)
+
+    # Predictions
+    predictions = model.predict(X_test_scaled)
+
+    # Evaluare
+    accuracy = accuracy_score(y_test, predictions)
+    report = classification_report(y_test, predictions)
+
+    # Checking feature importance
+    feature_importance = pd.DataFrame({
+        'Feature': X_train.columns,
+        'Importance': model.feature_importances_
+    }).sort_values(by='Importance', ascending=False)
+
+    with open(outputPath, 'w', encoding='utf-8') as f:
+        f.write('Train data procentage:'+ str(X_train.shape[0] / data.shape[0]) + "\n")
+        f.write('Test data procentage:'+ str(X_test.shape[0] / data.shape[0]) + "\n\n")
+        
+        f.write("Acuratețea modelului: " + str(accuracy) + "\n")
+        f.write("\n\nRaport de clasificare:\n"+ report + "\n")
+
+        f.write("\n\nFeature importance:\n")
+        f.write(feature_importance.to_string(index=False))
+
+# Call the function
+#decision_tree(input_path1, output_path4, plot_path4)
+#decision_tree(input_path2, output_path5, plot_path5)
+
+
+#logistic_regression(input_path1, output_path1, plot_path1)
+#logistic_regression(input_path2, output_path2, plot_path2)

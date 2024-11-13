@@ -29,3 +29,6 @@ Am aplicat Logistic Regression pentru a prezice un outcome ce poate fii low sau 
 Am încercat de asemenea combinarea celor 2 dataset-uri pentru un număr mai mare de date, dar deoarece nu toți parametrii au fost identici, au fost excluși câțiva parametrii și am ajuns la o acuratete de 0.525.
  
 Am afișat informați despre rezultatul obținut în fișier, cum ar fii acuratetea, raportul de clasificare si importanța fiecarui parametru.
+
+## TODO
+De adaugat tabela de la output + learning curve la documentatie, la train de mentionat la parametrii ca dataset este unbalanced
