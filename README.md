@@ -30,5 +30,13 @@ Am încercat de asemenea combinarea celor 2 dataset-uri pentru un număr mai mar
  
 Am afișat informați despre rezultatul obținut în fișier, cum ar fii acuratetea, raportul de clasificare si importanța fiecarui parametru.
 
-## TODO
-De adaugat tabela de la output + learning curve la documentatie, la train de mentionat la parametrii ca dataset este unbalanced
+## Decision Tree pe 2 dataset-uri de mici dimensiuni:
+	
+Am aplicat Decision Tree pentru a prezice un outcome ce poate fii low sau high, avănd  aceleasi date folosite anterior. Am realizat o acuratete de 0.8 respectiv 0.7 pentru cele 2 dataset-uri.
+     
+Am afișat informați despre rezultatul obținut în fișier, cum ar fii acuratetea, raportul de clasificare si importanța fiecarui parametru.
+
+## Logistic Regression si Decision Tree pe dataset-ul mare:
+
+Am aplicat Logistic Regression si apoi Decision Tree pentru a prezice un outcome ce poate fii low sau high, avănd 90 % train data si 10% test data. Am realizat o acuratete de 0.62 respectiv 0.64 pe cei 2 algoritmi. 
+Am afișat informați despre rezultatul obținut în fișier, cum ar fii acuratetea, raportul de clasificare si importanța fiecarui parametru.
