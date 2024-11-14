@@ -58,18 +58,8 @@ def plot_learning_curve(estimator, title, X, y, cv=None, n_jobs=None, train_size
 
 # Functie Logistic Regression
 
-def logistic_regression_BIGDATA(inputpath, outputPath, plotPath):
-    df = pd.read_csv(inputpath)
-
-    # Transformăm datele pentru a avea fiecare combinație de (donor_id, visit_id) pe un singur rând
-    #data = df.pivot(index=['donor_id', 'visit_id'], columns='name', values='data').reset_index()
-
-    data_pivoted = df.pivot_table(index=['donor_id', 'visit_id'], columns='name', values='data', aggfunc='last').reset_index()
-    vaccine_response = df[['donor_id', 'visit_id', 'vaccine_response']].drop_duplicates()
-    data = data_pivoted.merge(vaccine_response, on=['donor_id', 'visit_id'], how='left')
-
-    data = data[(data["vaccine_response"].isna() == False)]
-    # Separați seturile de training și testing
+def logistic_regression_BIGDATA_visit_id(data, outputPath, plotPath):
+    
     train_data, test_data = train_test_split(data, test_size=0.1, random_state=42)
 
     print(f"Număr de mostre în train_data după filtrare: {len(train_data)}\n\n\n\n")
@@ -125,17 +115,8 @@ def logistic_regression_BIGDATA(inputpath, outputPath, plotPath):
 
 
 
-
-def decision_tree_BIGDATA(inputpath, outputPath, plotPath):
-    df = pd.read_csv(inputpath)
-
-    # Transformăm datele pentru a avea fiecare combinație de (donor_id, visit_id) pe un singur rând
-    data_pivoted = df.pivot_table(index=['donor_id', 'visit_id'], columns='name', values='data', aggfunc='last').reset_index()
-    vaccine_response = df[['donor_id', 'visit_id', 'vaccine_response']].drop_duplicates()
-    data = data_pivoted.merge(vaccine_response, on=['donor_id', 'visit_id'], how='left')
-
-    data = data[(data["vaccine_response"].isna() == False)]
-    # Separați seturile de training și testing
+def decision_tree_BIGDATA(data, outputPath, plotPath):
+    
     train_data, test_data = train_test_split(data, test_size=0.1, random_state=42)
 
     print(f"Număr de mostre în train_data după filtrare: {len(train_data)}\n\n\n\n")
@@ -188,3 +169,19 @@ def decision_tree_BIGDATA(inputpath, outputPath, plotPath):
 #decision_tree_BIGDATA(input_path4, output_path7, plot_path7)
 
 #logistic_regression_BIGDATA(input_path4, output_path6, plot_path6)
+
+df = pd.read_csv(input_path4)
+df['units'] = pd.to_numeric(df['units'], errors='coerce').fillna(0).astype(int)
+
+
+    # Transformăm datele pentru a avea fiecare combinație de (donor_id, visit_id) pe un singur rând
+    #data = df.pivot(index=['donor_id', 'visit_id'], columns='name', values='data').reset_index()
+
+data_pivoted = df.pivot_table(index=['donor_id', 'units'], columns='name', values='data', aggfunc='last').reset_index()
+vaccine_response = df[['donor_id', 'units', 'vaccine_response']].drop_duplicates()
+data = data_pivoted.merge(vaccine_response, on=['donor_id', 'units'], how='left')
+
+data.to_csv('Dataset\\Data_units.csv', index=False)
+
+data = data[(data["vaccine_response"].isna() == False)]
+    # Separați seturile de training și testing
