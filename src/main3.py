@@ -18,8 +18,9 @@ from imblearn.over_sampling import SMOTE
 input_path4 = 'Dataset\\FluPRINT_database\\fluprint_export.csv'
 output_path6 = 'output\\output_Data6.txt'
 output_path7 = 'output\\output_Data7.txt'
+output_path8 = 'output\\output_Data8.txt'
 plot_path6 = 'output\\learning_curve_Data6.png'
-plot_path7 = 'output\\learning_curve_Data7.png'
+plot_path8 = 'output\\learning_curve_Data8.png'
 
 # Functie pentru plotarea learning curve
 def plot_learning_curve(estimator, title, X, y, cv=None, n_jobs=None, train_sizes=np.linspace(0.1, 1.0, 5), output_path='learning_curve.png'):
@@ -58,7 +59,7 @@ def plot_learning_curve(estimator, title, X, y, cv=None, n_jobs=None, train_size
 
 # Functie Logistic Regression
 
-def logistic_regression_BIGDATA_visit_id(data, outputPath, plotPath):
+def logistic_regression_BIGDATA2(data, output, plot):
     
     train_data, test_data = train_test_split(data, test_size=0.1, random_state=42)
 
@@ -68,9 +69,9 @@ def logistic_regression_BIGDATA_visit_id(data, outputPath, plotPath):
     print(f"Număr de mostre în all_data după filtrare: {len(data)}\n\n\n\n")
 
     # Selectarea caracteristicilor și a țintei
-    X_train = train_data.drop(columns=['donor_id', 'vaccine_response', 'visit_id'])
+    X_train = train_data.drop(columns=['donor_id', 'vaccine_response'])
     y_train = train_data['vaccine_response']
-    X_test = test_data.drop(columns=['donor_id', 'vaccine_response', 'visit_id'])
+    X_test = test_data.drop(columns=['donor_id', 'vaccine_response'])
     y_test = test_data['vaccine_response']
 
 
@@ -84,6 +85,7 @@ def logistic_regression_BIGDATA_visit_id(data, outputPath, plotPath):
     model.fit(X_train, y_train)
 
     # Plot learning curve
+    plotPath = 'output\\BIGDATA\\' + plot
     plot_learning_curve(model, "Learning Curve (Logistic Regression)", X_train, y_train, cv=5, output_path=plotPath)
 
 
@@ -102,7 +104,7 @@ def logistic_regression_BIGDATA_visit_id(data, outputPath, plotPath):
         'Coefficient':  model.named_steps['logreg'].coef_[0]
     }).sort_values(by='Coefficient', ascending=False)
 
-
+    outputPath = 'output\\BIGDATA\\' + output
     with open(outputPath, 'w', encoding='utf-8') as f:
         f.write('Train data procentage:'+ str(X_train.shape[0] / data.shape[0]) + "\n")
         f.write('Test data procentage:'+ str(X_test.shape[0] / data.shape[0]) + "\n\n")
@@ -114,9 +116,24 @@ def logistic_regression_BIGDATA_visit_id(data, outputPath, plotPath):
         f.write(feature_importance.to_string(index=False))
 
 
+def decision_tree_BIGDATA(inputpath, outputPath, plotPath):
+    df = pd.read_csv(inputpath)
+    df['units'] = pd.to_numeric(df['units'], errors='coerce').fillna(0).astype(int)
 
-def decision_tree_BIGDATA(data, outputPath, plotPath):
-    
+
+    # Original pivot operation
+    data_pivoted = df.pivot_table(index='donor_id', columns='name', values='data', aggfunc='last').reset_index()
+
+    # Select only the unique 'donor_id' and 'units' columns from the original DataFrame
+    units_column = df[['donor_id', 'units']].drop_duplicates(subset='donor_id')
+
+    # Merge the 'units' column into the pivoted DataFrame
+    data_pivoted = data_pivoted.merge(units_column, on='donor_id', how='left')
+    vaccine_response = df[['donor_id', 'vaccine_response']].drop_duplicates()
+    data = data_pivoted.merge(vaccine_response, on='donor_id', how='left')
+
+    data = data[(data["vaccine_response"].isna() == False)]
+
     train_data, test_data = train_test_split(data, test_size=0.1, random_state=42)
 
     print(f"Număr de mostre în train_data după filtrare: {len(train_data)}\n\n\n\n")
@@ -164,24 +181,75 @@ def decision_tree_BIGDATA(data, outputPath, plotPath):
         f.write("\n\nFeature importance:\n")
         f.write(feature_importance.to_string(index=False))
 
+def logistic_regression_BIGDATA(inputpath, outputPath, plotPath):
+    df = pd.read_csv(inputpath)
+    df['units'] = pd.to_numeric(df['units'], errors='coerce').fillna(0).astype(int)
 
 
-#decision_tree_BIGDATA(input_path4, output_path7, plot_path7)
+    # Original pivot operation
+    data_pivoted = df.pivot_table(index='donor_id', columns='name', values='data', aggfunc='last').reset_index()
 
-#logistic_regression_BIGDATA(input_path4, output_path6, plot_path6)
+    # Select only the unique 'donor_id' and 'units' columns from the original DataFrame
+    units_column = df[['donor_id', 'units']].drop_duplicates(subset='donor_id')
 
-df = pd.read_csv(input_path4)
-df['units'] = pd.to_numeric(df['units'], errors='coerce').fillna(0).astype(int)
+    # Merge the 'units' column into the pivoted DataFrame
+    data_pivoted = data_pivoted.merge(units_column, on='donor_id', how='left')
+    vaccine_response = df[['donor_id', 'vaccine_response']].drop_duplicates()
+    data = data_pivoted.merge(vaccine_response, on='donor_id', how='left')
 
-
-    # Transformăm datele pentru a avea fiecare combinație de (donor_id, visit_id) pe un singur rând
-    #data = df.pivot(index=['donor_id', 'visit_id'], columns='name', values='data').reset_index()
-
-data_pivoted = df.pivot_table(index=['donor_id', 'units'], columns='name', values='data', aggfunc='last').reset_index()
-vaccine_response = df[['donor_id', 'units', 'vaccine_response']].drop_duplicates()
-data = data_pivoted.merge(vaccine_response, on=['donor_id', 'units'], how='left')
-
-data.to_csv('Dataset\\Data_units.csv', index=False)
-
-data = data[(data["vaccine_response"].isna() == False)]
+    data = data[(data["vaccine_response"].isna() == False)]
+    
     # Separați seturile de training și testing
+    train_data, test_data = train_test_split(data, test_size=0.1, random_state=42)
+
+    print(f"Număr de mostre în train_data după filtrare: {len(train_data)}\n\n\n\n")
+    print(f"Număr de mostre în test_data după filtrare: {len(test_data)}\n\n\n\n")
+    print(f"Număr de mostre în total după filtrare: {len(data)}\n\n\n\n")
+
+    # Selectarea caracteristicilor și a țintei
+    X_train = train_data.drop(columns=['donor_id', 'vaccine_response'])
+    y_train = train_data['vaccine_response']
+    X_test = test_data.drop(columns=['donor_id', 'vaccine_response'])
+    y_test = test_data['vaccine_response']
+
+
+    
+    imputer = SimpleImputer(strategy="mean")
+    model = Pipeline(steps=[
+        ('scaler', StandardScaler()),
+        ('imputer', imputer),
+        ('logreg', LogisticRegression(max_iter=2000))
+    ])
+    model.fit(X_train, y_train)
+
+    #Plot learning curve
+    #plot_learning_curve(model, "Learning Curve (Logistic Regression)", X_train, y_train, cv=5, output_path=plotPath)
+
+
+    # Predicții pe setul de testare
+    predictions = model.predict(X_test)
+
+    # Evaluare
+    accuracy = accuracy_score(y_test, predictions)
+    print(accuracy)
+    report = classification_report(y_test, predictions)
+        
+
+    # Checking feature importance
+    feature_importance = pd.DataFrame({
+        'Feature': X_train.columns,
+        'Coefficient':  model.named_steps['logreg'].coef_[0]
+    }).sort_values(by='Coefficient', ascending=False)
+
+
+    with open(outputPath, 'w', encoding='utf-8') as f:
+        f.write('Train data procentage:'+ str(X_train.shape[0] / data.shape[0]) + "\n")
+        f.write('Test data procentage:'+ str(X_test.shape[0] / data.shape[0]) + "\n\n")
+        
+        f.write("Acuratețea modelului: " + str(accuracy) + "\n")
+        f.write("\n\nRaport de clasificare:\n"+ report + "\n")
+
+        f.write("\n\nFeature importance:\n")
+        f.write(feature_importance.to_string(index=False))
+
+logistic_regression_BIGDATA2(input_path4, output_path8, plot_path8)
