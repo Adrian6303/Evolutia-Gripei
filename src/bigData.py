@@ -15,12 +15,11 @@ from imblearn.over_sampling import SMOTE
 
 
 # Locatii fisiere
-input_path4 = 'Dataset\\FluPRINT_database\\fluprint_export.csv'
-output_path6 = 'output\\output_Data6.txt'
-output_path7 = 'output\\output_Data7.txt'
-output_path8 = 'output\\output_Data8.txt'
-plot_path6 = 'output\\learning_curve_Data6.png'
-plot_path8 = 'output\\learning_curve_Data8.png'
+input_path = 'Dataset\\FluPRINT_database\\fluprint_export.csv'
+output_path1 = 'output\\Big_Data\\output_Data_L.txt'
+output_path2 = 'output\\Big_Data\\output_Data_D.txt'
+plot_path1 = 'output\\Big_Data\\learning_curve_L.png'
+plot_path2 = 'output\\Big_Data\\learning_curve_D.png'
 
 # Functie pentru plotarea learning curve
 def plot_learning_curve(estimator, title, X, y, cv=None, n_jobs=None, train_sizes=np.linspace(0.1, 1.0, 5), output_path='learning_curve.png'):
@@ -141,9 +140,9 @@ def decision_tree_BIGDATA(inputpath, outputPath, plotPath):
     print(f"Număr de mostre în all_data după filtrare: {len(data)}\n\n\n\n")
 
     # Selectarea caracteristicilor și a țintei
-    X_train = train_data.drop(columns=['donor_id', 'vaccine_response', 'visit_id'])
+    X_train = train_data.drop(columns=['donor_id', 'vaccine_response'])
     y_train = train_data['vaccine_response']
-    X_test = test_data.drop(columns=['donor_id', 'vaccine_response', 'visit_id'])
+    X_test = test_data.drop(columns=['donor_id', 'vaccine_response'])
     y_test = test_data['vaccine_response']
 
     imputer = SimpleImputer(strategy="mean")
@@ -223,7 +222,7 @@ def logistic_regression_BIGDATA(inputpath, outputPath, plotPath):
     model.fit(X_train, y_train)
 
     #Plot learning curve
-    #plot_learning_curve(model, "Learning Curve (Logistic Regression)", X_train, y_train, cv=5, output_path=plotPath)
+    plot_learning_curve(model, "Learning Curve (Logistic Regression)", X_train, y_train, cv=5, output_path=plotPath)
 
 
     # Predicții pe setul de testare
@@ -252,4 +251,5 @@ def logistic_regression_BIGDATA(inputpath, outputPath, plotPath):
         f.write("\n\nFeature importance:\n")
         f.write(feature_importance.to_string(index=False))
 
-logistic_regression_BIGDATA2(input_path4, output_path8, plot_path8)
+#logistic_regression_BIGDATA(input_path, output_path1, plot_path1)
+#decision_tree_BIGDATA(input_path, output_path2, plot_path2)

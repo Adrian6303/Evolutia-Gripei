@@ -10,8 +10,8 @@ import numpy as np
 
 
 # Locatii fisiere
-input_path1 = 'Dataset\Dataset1.xlsx'
-input_path2 = 'Dataset\Dataset2.xlsx'
+input_path1 = 'Dataset\\Small_Data\\Dataset1.xlsx'
+input_path2 = 'Dataset\\Small_Data\\Dataset2.xlsx'
 output_path = 'output\output_Data3.txt'
 plot_path = 'output\learning_curve_Data3.png'
 

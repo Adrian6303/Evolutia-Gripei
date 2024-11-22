@@ -11,8 +11,8 @@ from imblearn.over_sampling import SMOTE
 
 
 # Locatii fisiere
-input_path1 = 'Dataset\Dataset1.xlsx'
-input_path2 = 'Dataset\Dataset2.xlsx'
+input_path1 = 'Dataset\\Small_Data\\Dataset1.xlsx'
+input_path2 = 'Dataset\\Small_Data\\Dataset2.xlsx'
 output_path1 = 'output\output_Data1.txt'
 output_path2 = 'output\output_Data2.txt'
 output_path4 = 'output\output_Data4.txt'

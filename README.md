@@ -40,3 +40,10 @@ Am afișat informați despre rezultatul obținut în fișier, cum ar fii acurate
 
 Am aplicat Logistic Regression si apoi Decision Tree pentru a prezice un outcome ce poate fii low sau high, avănd 90 % train data si 10% test data. Am realizat o acuratete de 0.62 respectiv 0.64 pe cei 2 algoritmi. 
 Am afișat informați despre rezultatul obținut în fișier, cum ar fii acuratetea, raportul de clasificare si importanța fiecarui parametru.
+
+
+## TODO
+De scris concluzie
+De refacut la Logistic regression unde facem cu Scaler (fara bool doar int cred)
+De salvat modelul cel mai bun
+De trimis catre front 
