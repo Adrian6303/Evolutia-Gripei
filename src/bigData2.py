@@ -8,6 +8,7 @@ from sklearn.model_selection import StratifiedKFold, train_test_split, learning_
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from joblib import dump
 
 def plot_learning_curve(estimator, title, X, y, cv=None, n_jobs=None, train_sizes=np.linspace(0.1, 1.0, 5), output_path='learning_curve.png'):
     plt.figure()
@@ -65,6 +66,8 @@ def logistic_regression2(inputpath, outputPath, plotPath):
     # Fit the model
     model.fit(X_train, y_train)
 
+    dump(model, model_path)
+
     # Plot learning curve
     plot_learning_curve(model, "Learning Curve (Logistic Regression)", X_train, y_train, cv=5, output_path=plotPath)
 
@@ -83,6 +86,7 @@ def logistic_regression2(inputpath, outputPath, plotPath):
 input_path = 'Dataset\\FluPRINT_database\\fluprint_export.csv'
 output_path1 = 'output\\Big_Data\\output_Data_L-2.txt'
 plot_path1 = 'output\\Big_Data\\learning_curve_L-2.png'
+model_path = 'output\\models\\logistic_regression2.joblib'
 
 
 logistic_regression2(input_path, output_path1, plot_path1)

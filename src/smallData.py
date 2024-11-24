@@ -56,7 +56,6 @@ def plot_learning_curve(estimator, title, X, y, cv=None, n_jobs=None, train_size
     plt.savefig(output_path)
     plt.close()
 
-
 # Functie Logistic Regression
 def logistic_regression(inputpath, outputPath, plotPath):
     # Citirea datelor
@@ -77,13 +76,17 @@ def logistic_regression(inputpath, outputPath, plotPath):
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
+    print(np.unique(y_train), "\n\n\n\n")
+
 
     # Antrenarea modelului Logistic Regression
-    model = LogisticRegression(max_iter=1000)
+    model = LogisticRegression(max_iter=1000, penalty='l2', C=1.0, solver='liblinear', class_weight='balanced')
+
+    #model = LogisticRegression(max_iter=1000)
     model.fit(X_train_scaled, y_train)
 
     # Plot learning curve
-    #plot_learning_curve(model, "Learning Curve (Logistic Regression)", X_train_scaled, y_train, cv=5, output_path=plotPath)
+    plot_learning_curve(model, "Learning Curve (Logistic Regression)", X_train_scaled, y_train, cv=5, output_path=plotPath)
 
 
     # Predicții pe setul de testare
@@ -112,7 +115,7 @@ def logistic_regression(inputpath, outputPath, plotPath):
         f.write(feature_importance.to_string(index=False))
 
 
-def decision_tree(inputpath, outputPath, plotPath):
+def decision_tree(inputpath, outputPath, plotPath, max_depth, min_samples_split, min_samples_leaf):
     # Citirea datelor
     data = pd.read_excel(inputpath, sheet_name='Sheet1')
 
@@ -131,23 +134,18 @@ def decision_tree(inputpath, outputPath, plotPath):
     print(y_train.value_counts())
 
     # Handle imbalanced dataset using SMOTE
-    smote = SMOTE()
-    X_train_resampled, y_train_resampled = smote.fit_resample(X_train, y_train)
-
-    # Scale the data
-    scaler = StandardScaler()
-    X_train_scaled = scaler.fit_transform(X_train_resampled)
-    X_test_scaled = scaler.transform(X_test)
+    #smote = SMOTE()
+    #X_train, y_train = smote.fit_resample(X_train, y_train)
 
     # Train the model
-    model = DecisionTreeClassifier()
-    model.fit(X_train_scaled, y_train_resampled)
+    model = DecisionTreeClassifier(max_depth=max_depth,min_samples_split=min_samples_split,min_samples_leaf=min_samples_leaf)
+    model.fit(X_train, y_train)
 
     # Plot learning curve and save as image
-    plot_learning_curve(model, "Learning Curve (Decision Tree)", X_train_scaled, y_train_resampled, cv=StratifiedKFold(n_splits=5), output_path=plotPath)
+    plot_learning_curve(model, "Learning Curve (Decision Tree)", X_train, y_train, cv=StratifiedKFold(n_splits=5), output_path=plotPath)
 
     # Predictions
-    predictions = model.predict(X_test_scaled)
+    predictions = model.predict(X_test)
 
     # Evaluare
     accuracy = accuracy_score(y_test, predictions)
@@ -162,6 +160,9 @@ def decision_tree(inputpath, outputPath, plotPath):
     with open(outputPath, 'w', encoding='utf-8') as f:
         f.write('Train data procentage:'+ str(X_train.shape[0] / data.shape[0]) + "\n")
         f.write('Test data procentage:'+ str(X_test.shape[0] / data.shape[0]) + "\n\n")
+        f.write("Max depth: " + str(max_depth) + "\n")
+        f.write("Min samples split: " + str(min_samples_split) + "\n")
+        f.write("Min samples leaf: " + str(min_samples_leaf) + "\n\n")
         
         f.write("Acuratețea modelului: " + str(accuracy) + "\n")
         f.write("\n\nRaport de clasificare:\n"+ report + "\n")
@@ -169,10 +170,24 @@ def decision_tree(inputpath, outputPath, plotPath):
         f.write("\n\nFeature importance:\n")
         f.write(feature_importance.to_string(index=False))
 
+
+max_depth = 10
+min_samples_split = 10
+min_samples_leaf = 5
+
+output_test1 = 'output\Small_Data\output_Data1-D-Test.txt'
+output_test2 = 'output\Small_Data\output_Data2-D-Test.txt'
+output_test3 = 'output\Small_Data\output_Data1-L-Test.txt'
+output_test4 = 'output\Small_Data\output_Data2-L-Test.txt'
+plot_test1 = 'output\Small_Data\learning_curve_Data1-D-Test.png'
+plot_test2 = 'output\Small_Data\learning_curve_Data2-D-Test.png'
+plot_path3 = 'output\Small_Data\learning_curve_Data1-L-Test.png'
+plot_path4 = 'output\Small_Data\learning_curve_Data2-L-Test.png'
+
+
 # Call the function
-#decision_tree(input_path1, output_path4, plot_path4)
-#decision_tree(input_path2, output_path5, plot_path5)
+#decision_tree(input_path1, output_test1, plot_test1, max_depth, min_samples_split, min_samples_leaf)
+#decision_tree(input_path2, output_test2, plot_test2, max_depth, min_samples_split, min_samples_leaf)
 
-
-#logistic_regression(input_path1, output_path1, plot_path1)
-#logistic_regression(input_path2, output_path2, plot_path2)
+#logistic_regression(input_path1, output_test3, plot_path3)
+#logistic_regression(input_path2, output_test4, plot_path4)

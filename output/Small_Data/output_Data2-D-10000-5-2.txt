@@ -1,0 +1,127 @@
+Train data procentage:0.75
+Test data procentage:0.25
+
+Max depth: 10000
+Min samples split: 5
+Min samples leaf: 2
+
+Acuratețea modelului: 0.6
+
+
+Raport de clasificare:
+              precision    recall  f1-score   support
+
+        high       0.40      0.67      0.50         3
+         low       0.80      0.57      0.67         7
+
+    accuracy                           0.60        10
+   macro avg       0.60      0.62      0.58        10
+weighted avg       0.68      0.60      0.62        10
+
+
+
+Feature importance:
+                     Feature  Importance
+       effector CD8+ T cells    0.534747
+                        TNFA    0.312512
+                    L50 TNFB    0.085355
+          IgD- CD27- B cells    0.067385
+                     B cells    0.000000
+                     L50 IL6    0.000000
+                    L50 MCSF    0.000000
+                    L50 MCP3    0.000000
+                    L50 MCP1    0.000000
+                     L50 LIF    0.000000
+                  L50 LEPTIN    0.000000
+                    L50 IP10    0.000000
+                     L50 IL8    0.000000
+                     L50 IL7    0.000000
+                     L50 IL5    0.000000
+                   L50 MIP1A    0.000000
+                     L50 IL4    0.000000
+                     L50 IL2    0.000000
+                   L50 IL1RA    0.000000
+                    L50 IL1B    0.000000
+                    L50 IL1A    0.000000
+                   L50 IL17F    0.000000
+                    L50 IL17    0.000000
+                    L50 IL15    0.000000
+                    L50 IL13    0.000000
+                 L50 IL12P70    0.000000
+                     L50 MIG    0.000000
+                     L50 NGF    0.000000
+                   L50 MIP1B    0.000000
+                    L50 IL10    0.000000
+        transitional B cells    0.000000
+                     T cells    0.000000
+                plasmablasts    0.000000
+                   NKT cells    0.000000
+                    NK cells    0.000000
+          naive CD8+ T cells    0.000000
+          naive CD4+ T cells    0.000000
+               naive B cells    0.000000
+                   monocytes    0.000000
+              memory B cells    0.000000
+                    L50 VEGF    0.000000
+                   L50 VCAM1    0.000000
+                   L50 TRAIL    0.000000
+                    L50 TNFA    0.000000
+                    L50 TGFB    0.000000
+                    L50 TGFA    0.000000
+                     L50 SCF    0.000000
+                L50 RESISTIN    0.000000
+                  L50 RANTES    0.000000
+                  L50 PDGFBB    0.000000
+                    L50 PAI1    0.000000
+                 L50 IL12P40    0.000000
+                    L50 IFNB    0.000000
+                    L50 IFNG    0.000000
+         CD85j+ CD4+ T cells    0.000000
+effector memory CD8+ T cells    0.000000
+effector memory CD4+ T cells    0.000000
+       effector CD4+ T cells    0.000000
+ central memory CD8+ T cells    0.000000
+ central memory CD4+ T cells    0.000000
+              CD94+ NK cells    0.000000
+          CD94+ CD8+ T cells    0.000000
+          CD94+ CD4+ T cells    0.000000
+                CD8+ T cells    0.000000
+         CD85j+ CD8+ T cells    0.000000
+                CD4+ T cells    0.000000
+        CD161- CD45RA+ Tregs    0.000000
+          CD4+ CD28+ T cells    0.000000
+          CD4+ CD27+ T cells    0.000000
+          CD28+ CD8+ T cells    0.000000
+          CD27+ CD8+ T cells    0.000000
+             CD16+ monocytes    0.000000
+             CD161+ NK cells    0.000000
+         CD161+ CD8+ T cells    0.000000
+         CD161+ CD4+ T cells    0.000000
+        CD161+ CD45RA+ Tregs    0.000000
+        CD161+ CD45RA- Tregs    0.000000
+        gamma- delta T cells    0.000000
+   HLADR- CD38+ CD4+ T cells    0.000000
+   HLADR- CD38+ CD8+ T cells    0.000000
+   HLADR+ CD38- CD4+ T cells    0.000000
+                    L50 IFNA    0.000000
+                   L50 ICAM1    0.000000
+                     L50 HGF    0.000000
+                    L50 GROA    0.000000
+                   L50 GMCSF    0.000000
+                    L50 GCSF    0.000000
+                    L50 FGFB    0.000000
+                    L50 FASL    0.000000
+                 L50 EOTAXIN    0.000000
+                   L50 ENA78    0.000000
+                   L50 CD40L    0.000000
+                         IL8    0.000000
+                         IL6    0.000000
+                        IL1B    0.000000
+          IgD+ CD27+ B cells    0.000000
+          IgD+ CD27- B cells    0.000000
+          IgD- CD27+ B cells    0.000000
+             HLADR+ NK cells    0.000000
+   HLADR+ CD38+ CD8+ T cells    0.000000
+   HLADR+ CD38+ CD4+ T cells    0.000000
+   HLADR+ CD38- CD8+ T cells    0.000000
+                       Tregs    0.000000
