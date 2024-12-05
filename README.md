@@ -41,9 +41,16 @@ Am afișat informați despre rezultatul obținut în fișier, cum ar fii acurate
 Am aplicat Logistic Regression si apoi Decision Tree pentru a prezice un outcome ce poate fii low sau high, avănd 90 % train data si 10% test data. Am realizat o acuratete de 0.62 respectiv 0.64 pe cei 2 algoritmi. 
 Am afișat informați despre rezultatul obținut în fișier, cum ar fii acuratetea, raportul de clasificare si importanța fiecarui parametru.
 
+## Logistic Regression si Decision Tree pe dataset-ul mare preprocesat:
+Am prelucrat dataset-ul original pentru a obtine un dataset nou cu fiecare rand reprezentand un pacient. 
+Pe dataset-ul rezultat am salvat unul unde raman doar coloanele cu cel mult 75% valori goale, respective 50% valori goale.
+
+Dataset1: 363 pacienti cu  384 de features folositi pentru antrenarea modelului
+
+Dataset2:  363 pacienti cu 102 de features folositi pentru antrenarea modelului
+
 
 ## TODO
-De scris concluzie
-De refacut la Logistic regression unde facem cu Scaler (fara bool doar int cred)
-De salvat modelul cel mai bun
-De trimis catre front 
+* De scris concluzie
+* De realizat o interfata in consola
+* De imbunatatit in continuare modelul
