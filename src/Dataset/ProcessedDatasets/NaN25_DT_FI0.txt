@@ -1,0 +1,4 @@
+Droped columns because too much NaN: 3243
+Filled columns: 43
+Droped columns because feature importance is 0: 30
+Drop if NaN > 25.0%

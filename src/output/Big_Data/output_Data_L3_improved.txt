@@ -1,0 +1,17 @@
+Train data procentage:0.7988980716253443
+Test data procentage:0.20110192837465565
+Dataset: Dataset\Bazate\NaN75.csv
+
+Acuratețea modelului: 0.684931506849315
+
+
+Raport de clasificare:
+              precision    recall  f1-score   support
+
+         0.0       0.76      0.80      0.78        51
+         1.0       0.47      0.41      0.44        22
+
+    accuracy                           0.68        73
+   macro avg       0.62      0.61      0.61        73
+weighted avg       0.67      0.68      0.68        73
+

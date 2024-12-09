@@ -1,0 +1,129 @@
+Train data procentage:0.8980716253443526
+Test data procentage:0.10192837465564739
+Dataset: Dataset\Bazate\NaN50.csv
+
+Acuratețea modelului: 0.5675675675675675
+Max depth: 100000000000
+Min samples split: 35
+Min samples leaf: 10
+
+
+Raport de clasificare:
+              precision    recall  f1-score   support
+
+         0.0       0.62      0.73      0.67        22
+         1.0       0.45      0.33      0.38        15
+
+    accuracy                           0.57        37
+   macro avg       0.53      0.53      0.53        37
+weighted avg       0.55      0.57      0.55        37
+
+
+
+Feature importance:
+                     Feature  Importance
+          CD85j+CD4+ T cells    0.203058
+                     L50_HGF    0.149036
+                   L50_TRAIL    0.128151
+              CD94+ NK cells    0.115770
+             CD161+ NK cells    0.090906
+                        race    0.079322
+     HLADR+CD38-CD8+ T cells    0.070730
+                L50_RESISTIN    0.062954
+     HLADR-CD38+CD4+ T cells    0.053605
+                     L50_MIG    0.023431
+                    NK cells    0.012585
+effector memory CD8+ T cells    0.006925
+            PD1+CD8+ T cells    0.003528
+                   L50_MIP1B    0.000000
+                     L50_SCF    0.000000
+                     L50_IL8    0.000000
+                    L50_TNFA    0.000000
+                    L50_TGFB    0.000000
+                    L50_TGFA    0.000000
+                    L50_IP10    0.000000
+                  L50_LEPTIN    0.000000
+                     L50_LIF    0.000000
+                     L50_NGF    0.000000
+                    L50_MCP1    0.000000
+                  L50_RANTES    0.000000
+                  L50_PDGFBB    0.000000
+                    L50_PAI1    0.000000
+                    L50_MCP3    0.000000
+                    L50_MCSF    0.000000
+                   L50_MIP1A    0.000000
+                    L50_TNFB    0.000000
+            PD1+CD4+ T cells    0.000000
+                   L50_VCAM1    0.000000
+              memory B cells    0.000000
+                      gender    0.000000
+                   visit_age    0.000000
+                       units    0.000000
+        transitional B cells    0.000000
+                plasmablasts    0.000000
+          naive CD8+ T cells    0.000000
+          naive CD4+ T cells    0.000000
+               naive B cells    0.000000
+                   monocytes    0.000000
+         gamma-delta T cells    0.000000
+                    L50_VEGF    0.000000
+effector memory CD4+ T cells    0.000000
+       effector CD8+ T cells    0.000000
+       effector CD4+ T cells    0.000000
+ central memory CD8+ T cells    0.000000
+ central memory CD4+ T cells    0.000000
+                       Tregs    0.000000
+                     T cells    0.000000
+                     L50_IL6    0.000000
+                   NKT cells    0.000000
+                     L50_IL7    0.000000
+                     B cells    0.000000
+                     L50_IL5    0.000000
+           IgD-CD27- B cells    0.000000
+           IgD+CD27- B cells    0.000000
+           IgD+CD27+ B cells    0.000000
+     HLADR-CD38+CD8+ T cells    0.000000
+     HLADR+CD38-CD4+ T cells    0.000000
+     HLADR+CD38+CD8+ T cells    0.000000
+     HLADR+CD38+CD4+ T cells    0.000000
+             HLADR+ NK cells    0.000000
+           CD94+CD8+ T cells    0.000000
+           CD94+CD4+ T cells    0.000000
+          CD85j+CD8+ T cells    0.000000
+                CD8+ T cells    0.000000
+           CD4+CD28+ T cells    0.000000
+           CD4+CD27+ T cells    0.000000
+                CD4+ T cells    0.000000
+           CD28+CD8+ T cells    0.000000
+           CD27+CD8+ T cells    0.000000
+         CD161-CD45RA+ Tregs    0.000000
+          CD161+CD8+ T cells    0.000000
+         CD161+CD45RA- Tregs    0.000000
+         CD161+CD45RA+ Tregs    0.000000
+          CD161+CD4+ T cells    0.000000
+           IgD-CD27+ B cells    0.000000
+                   L50_CD40L    0.000000
+                     L50_IL4    0.000000
+                   L50_ENA78    0.000000
+                     L50_IL2    0.000000
+             CD16+ monocytes    0.000000
+                    L50_IL1B    0.000000
+                    L50_IL1A    0.000000
+                   L50_IL17F    0.000000
+                    L50_IL17    0.000000
+                    L50_IL15    0.000000
+                    L50_IL13    0.000000
+                 L50_IL12P70    0.000000
+                 L50_IL12P40    0.000000
+                    L50_IL10    0.000000
+                    L50_IFNG    0.000000
+                    L50_IFNB    0.000000
+                    L50_IFNA    0.000000
+                   L50_ICAM1    0.000000
+                    L50_GROA    0.000000
+                   L50_GMCSF    0.000000
+                    L50_GCSF    0.000000
+                    L50_FGFB    0.000000
+                    L50_FASL    0.000000
+                 L50_EOTAXIN    0.000000
+                   L50_IL1RA    0.000000

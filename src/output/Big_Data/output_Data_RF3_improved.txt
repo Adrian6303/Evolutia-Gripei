@@ -1,0 +1,411 @@
+Train data procentage:0.8980716253443526
+Test data procentage:0.10192837465564739
+Dataset: Dataset\Bazate\NaN75.csv
+
+Acuratețea modelului: 0.5945945945945946
+Max depth: 100000000000
+Min samples split: 50
+Min samples leaf: 30
+
+
+Raport de clasificare:
+              precision    recall  f1-score   support
+
+         0.0       0.59      1.00      0.75        22
+         1.0       0.00      0.00      0.00        15
+
+    accuracy                           0.59        37
+   macro avg       0.30      0.50      0.37        37
+weighted avg       0.35      0.59      0.44        37
+
+
+
+Feature importance:
+                     Feature  Importance
+          CD85j+CD4+ T cells    0.046789
+         CD161+CD45RA+ Tregs    0.037828
+                       Tregs    0.037593
+                  L50_PDGFBB    0.030381
+  Unstim_CD8+CD45RA-: pSTAT1    0.026509
+        IL-21_B cell: pSTAT1    0.024273
+        Th1 TFH CD8+ T cells    0.022425
+       Unstim_B cell: pSTAT1    0.020084
+                    L50_TNFB    0.016937
+                     L50_HGF    0.016609
+          IL-21_Mono: pSTAT1    0.014592
+    Th2 non-TFH CD8+ T cells    0.014564
+                     L50_IL8    0.014311
+                  L50_RANTES    0.013741
+          IL-10_CD8+: pSTAT1    0.013262
+          IL-10_Mono: pSTAT1    0.012841
+                 L50_EOTAXIN    0.012190
+           IgD-CD27+ B cells    0.011659
+         Unstim_CD8+: pSTAT3    0.011516
+     HLADR-CD38+CD4+ T cells    0.011296
+                    L50_IL1B    0.011243
+                   L50_ICAM1    0.011047
+ central memory CD4+ T cells    0.010956
+                   L50_MIP1A    0.010935
+                     L50_IL7    0.010708
+                   L50_TRAIL    0.010630
+                    L50_FGFB    0.010225
+         Unstim_CD8+: pSTAT1    0.010204
+            TFH CD4+ T cells    0.009896
+                    L50_IL1A    0.009510
+       Unstim_B cell: pSTAT3    0.009290
+                 L50_IL12P70    0.009270
+                    L50_GCSF    0.009268
+                    L50_IL17    0.009017
+         CD161+CD45RA- Tregs    0.008728
+   IL-10_CD4+CD45RA+: pSTAT1    0.008539
+                     L50_SCF    0.008406
+                     L50_MIG    0.008374
+                   monocytes    0.008353
+                        race    0.008281
+           CD94+CD4+ T cells    0.008160
+                L50_RESISTIN    0.008073
+         gamma-delta T cells    0.008004
+                    L50_PAI1    0.007923
+   IL-21_CD8+CD45RA+: pSTAT1    0.007874
+                    L50_TGFA    0.007782
+                   L50_VCAM1    0.007487
+           IgD+CD27- B cells    0.007454
+                  L50_LEPTIN    0.007306
+                    L50_FASL    0.007294
+                     L50_LIF    0.007069
+        CD16+CD14+ monocytes    0.006635
+                   L50_GMCSF    0.006566
+       effector CD4+ T cells    0.006464
+                   NKT cells    0.006389
+                       ENA78    0.006218
+           CD28+CD8+ T cells    0.006081
+        IL-10_B cell: pSTAT1    0.006048
+     HLADR+CD38-CD8+ T cells    0.005827
+                    NK cells    0.005726
+                     B cells    0.005549
+                    L50_MCSF    0.005524
+                     IL12P70    0.005435
+           CD4+CD28+ T cells    0.005418
+         IFNg_B cell: pSTAT3    0.005402
+              CD94+ NK cells    0.005244
+                     T cells    0.005117
+          naive CD4+ T cells    0.005088
+                    L50_TGFB    0.004967
+   IL-10_CD8+CD45RA-: pSTAT1    0.004901
+           IgD+CD27+ B cells    0.004734
+   IL-21_CD4+CD45RA-: pSTAT1    0.004726
+               naive B cells    0.004681
+                   L50_ENA78    0.004629
+ central memory CD8+ T cells    0.004510
+                        IL1B    0.004489
+                     L50_IL2    0.004420
+  Unstim_CD4+CD45RA-: pSTAT1    0.004412
+         Unstim_CD4+: pSTAT5    0.004284
+           CD4+CD27+ T cells    0.004260
+                    L50_IL10    0.004185
+                    L50_MCP1    0.004165
+  Unstim_CD8+CD45RA+: pSTAT1    0.004070
+                CD8+ T cells    0.004048
+         IL-7_B cell: pSTAT3    0.003977
+          naive CD8+ T cells    0.003854
+        IL-21_B cell: pSTAT5    0.003853
+          IL-21_CD4+: pSTAT1    0.003824
+                     IL12P40    0.003651
+                        TNFA    0.003603
+           CD57+CD4+ T cells    0.003578
+          CD161+CD4+ T cells    0.003569
+                        pDCs    0.003558
+   IL-10_CD4+CD45RA-: pSTAT1    0.003532
+       Th17 TFH CD8+ T cells    0.003515
+          CD161+CD8+ T cells    0.003397
+         IL-6_B cell: pSTAT1    0.003243
+                    L50_GROA    0.003135
+                 L50_IL12P40    0.003067
+                     L50_IL6    0.003057
+                      gender    0.003050
+           CD27+CD8+ T cells    0.002976
+   IL-21_CD4+CD45RA+: pSTAT1    0.002965
+                     L50_NGF    0.002929
+          IL-10_CD4+: pSTAT1    0.002815
+       effector CD8+ T cells    0.002787
+            CD161+ NKT cells    0.002759
+                       GMCSF    0.002718
+   IL-21_CD8+CD45RA-: pSTAT1    0.002701
+                        TNFB    0.002661
+                      LEPTIN    0.002565
+           IgD-CD27- B cells    0.002497
+                CD4+ T cells    0.002442
+                       MIP1A    0.002394
+            TFH CD8+ T cells    0.002386
+                    L50_TNFA    0.002367
+    Th1 non-TFH CD8+ T cells    0.002307
+        transitional B cells    0.002295
+           IL-6_CD8+: pSTAT3    0.002238
+                    L50_IL13    0.002155
+         CD161-CD45RA+ Tregs    0.001991
+effector memory CD8+ T cells    0.001909
+     HLADR+CD38+CD8+ T cells    0.001766
+                    L50_VEGF    0.001762
+effector memory CD4+ T cells    0.001759
+                         IL4    0.001738
+                      RANTES    0.001619
+                    L50_MCP3    0.001612
+                   L50_CD40L    0.001594
+                         IL7    0.001433
+             CD16+ monocytes    0.001386
+                    L50_IFNG    0.001372
+             HLADR+ NK cells    0.001372
+                        IFNA    0.001267
+                     L50_IL4    0.001263
+     HLADR-CD38+CD8+ T cells    0.001257
+                plasmablasts    0.001181
+                   visit_age    0.001045
+                        IFNG    0.000969
+       Th17 TFH CD4+ T cells    0.000925
+                    L50_IFNA    0.000920
+   Th17 non-TFH CD8+ T cells    0.000907
+              memory B cells    0.000688
+     HLADR+CD38+CD4+ T cells    0.000614
+          CD85j+CD8+ T cells    0.000429
+                         IL8    0.000393
+           CD57+CD8+ T cells    0.000379
+                        IL10    0.000372
+                    L50_IL15    0.000310
+                   L50_IL17F    0.000255
+                        IP10    0.000175
+                        GROA    0.000000
+                         HGF    0.000000
+                        GCSF    0.000000
+    IFNa_CD4+CD45RA-: pSTAT5    0.000000
+                    L50_IP10    0.000000
+                     L50_IL5    0.000000
+                        IL31    0.000000
+                         IL5    0.000000
+                         IL6    0.000000
+                         IL9    0.000000
+           IFNa_CD4+: pSTAT1    0.000000
+         IFNa_B cell: pSTAT5    0.000000
+         IFNa_B cell: pSTAT3    0.000000
+         IFNa_B cell: pSTAT1    0.000000
+                        IFNB    0.000000
+            ICOS+CD8+ T cell    0.000000
+            ICOS+CD4+ T cell    0.000000
+                    L50_IFNB    0.000000
+                       ICAM1    0.000000
+     HLADR+CD38-CD4+ T cells    0.000000
+                   L50_IL1RA    0.000000
+                   L50_MIP1B    0.000000
+                      PDGFBB    0.000000
+                        FGFB    0.000000
+  Unstim_CD8+CD45RA-: pSTAT3    0.000000
+    Th2 non-TFH CD4+ T cells    0.000000
+       Unstim_B cell: pSTAT5    0.000000
+         Unstim_CD4+: pSTAT1    0.000000
+         Unstim_CD4+: pSTAT3    0.000000
+  Unstim_CD4+CD45RA+: pSTAT1    0.000000
+  Unstim_CD4+CD45RA+: pSTAT3    0.000000
+  Unstim_CD4+CD45RA+: pSTAT5    0.000000
+  Unstim_CD4+CD45RA-: pSTAT3    0.000000
+  Unstim_CD4+CD45RA-: pSTAT5    0.000000
+         Unstim_CD8+: pSTAT5    0.000000
+  Unstim_CD8+CD45RA+: pSTAT3    0.000000
+  Unstim_CD8+CD45RA+: pSTAT5    0.000000
+  Unstim_CD8+CD45RA-: pSTAT5    0.000000
+                        FASL    0.000000
+         Unstim_Mono: pSTAT1    0.000000
+         Unstim_Mono: pSTAT3    0.000000
+         Unstim_Mono: pSTAT5    0.000000
+                       VCAM1    0.000000
+                        VEGF    0.000000
+                       VEGFD    0.000000
+                   basophils    0.000000
+             CD161+ NK cells    0.000000
+    CD16-CD56bright NK cells    0.000000
+        CD16+CD14- monocytes    0.000000
+                        mDCs    0.000000
+                       units    0.000000
+        Th2 TFH CD8+ T cells    0.000000
+        Th2 TFH CD4+ T cells    0.000000
+   Th17 non-TFH CD4+ T cells    0.000000
+    Th1 non-TFH CD4+ T cells    0.000000
+                     EOTAXIN    0.000000
+                         EGF    0.000000
+           CD94+CD8+ T cells    0.000000
+                         LIF    0.000000
+                        MCP1    0.000000
+                        MCP3    0.000000
+                        MCSF    0.000000
+                         MIG    0.000000
+                       MIP1B    0.000000
+                         NGF    0.000000
+              CD57+ NK cells    0.000000
+                        PAI1    0.000000
+            PD1+CD4+ T cells    0.000000
+            PD1+CD8+ T cells    0.000000
+                        IL23    0.000000
+                       PIGF1    0.000000
+                    RESISTIN    0.000000
+                         SCF    0.000000
+                       SDF1A    0.000000
+                TESTOSTERONE    0.000000
+                       CD40L    0.000000
+                        TGFA    0.000000
+                        TGFB    0.000000
+                       TRAIL    0.000000
+        Th1 TFH CD4+ T cells    0.000000
+                        IL27    0.000000
+                       IL17F    0.000000
+                        IL22    0.000000
+   IL-10_CD8+CD45RA+: pSTAT1    0.000000
+          IL-10_Mono: pSTAT5    0.000000
+          IL-10_Mono: pSTAT3    0.000000
+    IFNa_CD4+CD45RA+: pSTAT3    0.000000
+   IL-10_CD8+CD45RA-: pSTAT5    0.000000
+   IL-10_CD8+CD45RA-: pSTAT3    0.000000
+   IL-10_CD8+CD45RA+: pSTAT5    0.000000
+   IL-10_CD8+CD45RA+: pSTAT3    0.000000
+          IL-10_CD8+: pSTAT5    0.000000
+          IL-10_CD4+: pSTAT3    0.000000
+          IL-10_CD8+: pSTAT3    0.000000
+    IFNa_CD4+CD45RA+: pSTAT5    0.000000
+   IL-10_CD4+CD45RA-: pSTAT5    0.000000
+   IL-10_CD4+CD45RA-: pSTAT3    0.000000
+   IL-10_CD4+CD45RA+: pSTAT5    0.000000
+   IL-10_CD4+CD45RA+: pSTAT3    0.000000
+    IFNa_CD4+CD45RA-: pSTAT1    0.000000
+    IFNa_CD4+CD45RA+: pSTAT1    0.000000
+        IL-21_B cell: pSTAT3    0.000000
+          IL-21_CD4+: pSTAT3    0.000000
+          IL-21_CD4+: pSTAT5    0.000000
+          IL-21_Mono: pSTAT5    0.000000
+          IL-21_Mono: pSTAT3    0.000000
+           IFNa_CD4+: pSTAT3    0.000000
+   IL-21_CD8+CD45RA-: pSTAT5    0.000000
+   IL-21_CD8+CD45RA-: pSTAT3    0.000000
+   IL-21_CD8+CD45RA+: pSTAT5    0.000000
+   IL-21_CD8+CD45RA+: pSTAT3    0.000000
+           IFNa_CD4+: pSTAT5    0.000000
+          IL-21_CD8+: pSTAT5    0.000000
+          IL-21_CD8+: pSTAT3    0.000000
+          IL-21_CD8+: pSTAT1    0.000000
+   IL-21_CD4+CD45RA-: pSTAT5    0.000000
+   IL-21_CD4+CD45RA-: pSTAT3    0.000000
+   IL-21_CD4+CD45RA+: pSTAT5    0.000000
+   IL-21_CD4+CD45RA+: pSTAT3    0.000000
+          IL-10_CD4+: pSTAT5    0.000000
+        IL-10_B cell: pSTAT5    0.000000
+                        IL21    0.000000
+           IFNa_Mono: pSTAT1    0.000000
+           IFNg_CD4+: pSTAT5    0.000000
+           IFNg_CD4+: pSTAT3    0.000000
+           IFNg_CD4+: pSTAT1    0.000000
+         IFNg_B cell: pSTAT5    0.000000
+         IFNg_B cell: pSTAT1    0.000000
+           IFNa_Mono: pSTAT5    0.000000
+           IFNa_Mono: pSTAT3    0.000000
+    IFNa_CD8+CD45RA-: pSTAT5    0.000000
+        IL-10_B cell: pSTAT3    0.000000
+    IFNa_CD8+CD45RA-: pSTAT3    0.000000
+    IFNa_CD8+CD45RA-: pSTAT1    0.000000
+    IFNa_CD8+CD45RA+: pSTAT5    0.000000
+    IFNa_CD8+CD45RA+: pSTAT3    0.000000
+    IFNa_CD8+CD45RA+: pSTAT1    0.000000
+           IFNa_CD8+: pSTAT5    0.000000
+           IFNa_CD8+: pSTAT3    0.000000
+    IFNg_CD4+CD45RA+: pSTAT1    0.000000
+    IFNg_CD4+CD45RA+: pSTAT3    0.000000
+    IFNg_CD4+CD45RA+: pSTAT5    0.000000
+    IFNg_CD4+CD45RA-: pSTAT1    0.000000
+    IFNa_CD4+CD45RA-: pSTAT3    0.000000
+           IFNg_Mono: pSTAT5    0.000000
+           IFNg_Mono: pSTAT3    0.000000
+           IFNg_Mono: pSTAT1    0.000000
+    IFNg_CD8+CD45RA-: pSTAT5    0.000000
+    IFNg_CD8+CD45RA-: pSTAT3    0.000000
+    IFNg_CD8+CD45RA-: pSTAT1    0.000000
+    IFNg_CD8+CD45RA+: pSTAT5    0.000000
+    IFNg_CD8+CD45RA+: pSTAT3    0.000000
+    IFNg_CD8+CD45RA+: pSTAT1    0.000000
+           IFNg_CD8+: pSTAT5    0.000000
+           IFNg_CD8+: pSTAT3    0.000000
+           IFNg_CD8+: pSTAT1    0.000000
+    IFNg_CD4+CD45RA-: pSTAT5    0.000000
+    IFNg_CD4+CD45RA-: pSTAT3    0.000000
+         IL-2_B cell: pSTAT1    0.000000
+         IL-2_B cell: pSTAT3    0.000000
+         IL-2_B cell: pSTAT5    0.000000
+           IL-7_CD4+: pSTAT5    0.000000
+           IL-7_CD8+: pSTAT1    0.000000
+    IL-7_CD4+CD45RA-: pSTAT5    0.000000
+    IL-7_CD4+CD45RA-: pSTAT3    0.000000
+    IL-7_CD4+CD45RA-: pSTAT1    0.000000
+    IL-7_CD4+CD45RA+: pSTAT5    0.000000
+    IL-7_CD4+CD45RA+: pSTAT3    0.000000
+    IL-7_CD4+CD45RA+: pSTAT1    0.000000
+           IL-7_CD4+: pSTAT3    0.000000
+           IL-2_CD4+: pSTAT1    0.000000
+           IL-7_CD4+: pSTAT1    0.000000
+         IL-7_B cell: pSTAT5    0.000000
+         IL-7_B cell: pSTAT1    0.000000
+                        BDNF    0.000000
+           IL-6_Mono: pSTAT3    0.000000
+           IL-6_Mono: pSTAT1    0.000000
+    IL-6_CD8+CD45RA-: pSTAT5    0.000000
+           IL-7_CD8+: pSTAT3    0.000000
+           IL-7_CD8+: pSTAT5    0.000000
+    IL-7_CD8+CD45RA+: pSTAT1    0.000000
+    IL-7_CD8+CD45RA+: pSTAT3    0.000000
+                         IL2    0.000000
+                       IL1RA    0.000000
+                        IL1A    0.000000
+                        IL18    0.000000
+           IFNa_CD8+: pSTAT1    0.000000
+                       IL17A    0.000000
+                        IL15    0.000000
+                        IL13    0.000000
+           IL-7_Mono: pSTAT5    0.000000
+           IL-7_Mono: pSTAT3    0.000000
+           IL-7_Mono: pSTAT1    0.000000
+    IL-7_CD8+CD45RA-: pSTAT5    0.000000
+    IL-7_CD8+CD45RA-: pSTAT3    0.000000
+    IL-7_CD8+CD45RA-: pSTAT1    0.000000
+    IL-7_CD8+CD45RA+: pSTAT5    0.000000
+    IL-6_CD8+CD45RA-: pSTAT3    0.000000
+    IL-6_CD8+CD45RA-: pSTAT1    0.000000
+    IL-6_CD8+CD45RA+: pSTAT5    0.000000
+    IL-2_CD8+CD45RA-: pSTAT5    0.000000
+    IL-2_CD8+CD45RA-: pSTAT1    0.000000
+    IL-2_CD8+CD45RA+: pSTAT5    0.000000
+    IL-2_CD8+CD45RA+: pSTAT3    0.000000
+    IL-2_CD8+CD45RA+: pSTAT1    0.000000
+           IL-2_CD8+: pSTAT5    0.000000
+           IL-2_CD8+: pSTAT3    0.000000
+           IL-2_CD8+: pSTAT1    0.000000
+    IL-2_CD4+CD45RA-: pSTAT5    0.000000
+    IL-2_CD4+CD45RA-: pSTAT3    0.000000
+    IL-2_CD4+CD45RA-: pSTAT1    0.000000
+    IL-2_CD4+CD45RA+: pSTAT5    0.000000
+    IL-2_CD4+CD45RA+: pSTAT3    0.000000
+    IL-2_CD4+CD45RA+: pSTAT1    0.000000
+           IL-2_CD4+: pSTAT5    0.000000
+           IL-2_CD4+: pSTAT3    0.000000
+    IL-2_CD8+CD45RA-: pSTAT3    0.000000
+           IL-2_Mono: pSTAT1    0.000000
+    IL-6_CD8+CD45RA+: pSTAT3    0.000000
+           IL-2_Mono: pSTAT3    0.000000
+    IL-6_CD8+CD45RA+: pSTAT1    0.000000
+           IL-6_CD8+: pSTAT5    0.000000
+           IL-6_CD8+: pSTAT1    0.000000
+    IL-6_CD4+CD45RA-: pSTAT5    0.000000
+    IL-6_CD4+CD45RA-: pSTAT3    0.000000
+    IL-6_CD4+CD45RA-: pSTAT1    0.000000
+    IL-6_CD4+CD45RA+: pSTAT5    0.000000
+    IL-6_CD4+CD45RA+: pSTAT3    0.000000
+    IL-6_CD4+CD45RA+: pSTAT1    0.000000
+           IL-6_CD4+: pSTAT5    0.000000
+           IL-6_CD4+: pSTAT3    0.000000
+           IL-6_CD4+: pSTAT1    0.000000
+         IL-6_B cell: pSTAT5    0.000000
+         IL-6_B cell: pSTAT3    0.000000
+           IL-2_Mono: pSTAT5    0.000000
+           IL-6_Mono: pSTAT5    0.000000

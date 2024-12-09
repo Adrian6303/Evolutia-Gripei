@@ -1,0 +1,68 @@
+Train data procentage:0.8980716253443526
+Test data procentage:0.10192837465564739
+Dataset: Dataset\Bazate\NaN25.csv
+
+Acuratețea modelului: 0.5945945945945946
+Max depth: 100000000000
+Min samples split: 50
+Min samples leaf: 30
+
+
+Raport de clasificare:
+              precision    recall  f1-score   support
+
+         0.0       0.59      1.00      0.75        22
+         1.0       0.00      0.00      0.00        15
+
+    accuracy                           0.59        37
+   macro avg       0.30      0.50      0.37        37
+weighted avg       0.35      0.59      0.44        37
+
+
+
+Feature importance:
+                     Feature  Importance
+          CD85j+CD4+ T cells    0.112862
+         CD161+CD45RA+ Tregs    0.099673
+                        race    0.076255
+                       Tregs    0.072329
+         CD161+CD45RA- Tregs    0.050356
+                     T cells    0.044635
+         CD161-CD45RA+ Tregs    0.030603
+ central memory CD8+ T cells    0.029909
+           IgD-CD27+ B cells    0.029799
+     HLADR-CD38+CD4+ T cells    0.029306
+                    NK cells    0.027415
+        transitional B cells    0.025169
+                   NKT cells    0.023731
+                   monocytes    0.022145
+           IgD-CD27- B cells    0.020134
+       effector CD4+ T cells    0.020100
+           CD28+CD8+ T cells    0.019457
+                   visit_age    0.017588
+               naive B cells    0.017326
+     HLADR+CD38-CD4+ T cells    0.016970
+                CD8+ T cells    0.016674
+          CD161+CD4+ T cells    0.016061
+                     B cells    0.014773
+           IgD+CD27- B cells    0.013421
+          CD85j+CD8+ T cells    0.012884
+          naive CD8+ T cells    0.011637
+     HLADR+CD38+CD4+ T cells    0.010773
+           IgD+CD27+ B cells    0.010725
+       effector CD8+ T cells    0.009992
+                plasmablasts    0.009992
+     HLADR+CD38-CD8+ T cells    0.009912
+ central memory CD4+ T cells    0.009376
+                CD4+ T cells    0.009319
+     HLADR+CD38+CD8+ T cells    0.008863
+             HLADR+ NK cells    0.008788
+effector memory CD4+ T cells    0.007942
+         gamma-delta T cells    0.007378
+          naive CD4+ T cells    0.006616
+              memory B cells    0.006129
+     HLADR-CD38+CD8+ T cells    0.004423
+          CD161+CD8+ T cells    0.003732
+effector memory CD8+ T cells    0.002605
+                      gender    0.002224
+                       units    0.000000

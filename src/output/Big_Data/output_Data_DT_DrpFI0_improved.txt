@@ -1,0 +1,38 @@
+Train data procentage:0.8980716253443526
+Test data procentage:0.10192837465564739
+Dataset: Dataset\Bazate\NaN25_DT_FI0.csv
+
+Acuratețea modelului: 0.5675675675675675
+Max depth: 100000000000
+Min samples split: 35
+Min samples leaf: 10
+
+
+Raport de clasificare:
+              precision    recall  f1-score   support
+
+         0.0       0.61      0.77      0.68        22
+         1.0       0.44      0.27      0.33        15
+
+    accuracy                           0.57        37
+   macro avg       0.53      0.52      0.51        37
+weighted avg       0.54      0.57      0.54        37
+
+
+
+Feature importance:
+                     Feature  Importance
+          CD85j+CD4+ T cells    0.227696
+         CD161+CD45RA+ Tregs    0.116905
+                     B cells    0.112837
+     HLADR+CD38+CD4+ T cells    0.104021
+     HLADR+CD38+CD8+ T cells    0.075955
+effector memory CD4+ T cells    0.073174
+                        race    0.055865
+           IgD+CD27+ B cells    0.054929
+             HLADR+ NK cells    0.049749
+          CD161+CD4+ T cells    0.049243
+                   visit_age    0.046376
+     HLADR+CD38-CD4+ T cells    0.017425
+     HLADR+CD38-CD8+ T cells    0.015825
+                      gender    0.000000
