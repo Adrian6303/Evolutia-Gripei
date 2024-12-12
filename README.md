@@ -60,4 +60,8 @@ Aceasta abordare ne permite sa ignoram parametrii care nu influenteaza rezultatu
 
 
 ## TODO
-* 
+* Matrice de confuzie 
+* Precisie pe modele, nu doar acuratete
+* pentru modelul bun analiza pe fiecare pacient testat (pentru medici sa analizeze deciziile proaste)
+* pe modelul dt3 de rulat o data cu toti parametrii si dupa acelasi model trebuie reantrenat fara parametrii neimprtanti
+* demo / prezentare powerpoint
