@@ -21,6 +21,11 @@ Arborele de decizie este un algoritm de clasificare și regresie care utilizeaz�
 
 Arborii de decizie sunt eficienți și ușor de interpretat, deoarece oferă explicații vizuale pentru clasificări. Aceștia sunt valoroși în proiectul nostru, deoarece permit identificarea factorilor principali care influențează răspunsul la vaccinul antigripal și ajută la dezvoltarea unui sistem de suport decizional în domeniul sănătății.
 
+### 3. Random Forest
+
+Random Forest este un algoritm de învățare automată bazat pe arborele de decizie, utilizat pentru sarcini de clasificare și regresie. Acesta construiește o colecție (sau „pădure”) de arbori de decizie, fiecare fiind antrenat pe un subset aleatoriu al datelor, folosind și un subset aleatoriu de caracteristici. Predicția finală este obținută prin agregarea rezultatelor fiecărui arbore – de exemplu, prin vot majoritar în cazul clasificării sau prin media predicțiilor în cazul regresiei.
+
+Această abordare reduce riscul de supraînvățare (overfitting) și îmbunătățește robustețea și acuratețea modelului. Random Forest este valoros în proiectul nostru deoarece poate analiza relații complexe dintre caracteristici și poate identifica factorii cheie care influențează răspunsul la vaccinul antigripal, contribuind la dezvoltarea unui sistem de sprijin decizional mai precis și fiabil. De asemenea, algoritmul gestionează bine datele incomplete și variabilele irelevante.
 
 ## Logistic Regression pe 2 dataset-uri de mici dimensiuni:
 
@@ -51,7 +56,7 @@ Dataset2:  363 pacienti cu 102 de features folositi pentru antrenarea modelului
 
 ## Concluzie
 
-Dintre toate modelele testate cel mai bun este variant ace foloseste Decision Tree pe un dataset preprocesat, la acesta am obtinut o acuratete de 75%,  al doilea cel muai bun model fiind cel cu Locistic Regression pe acelasi dataset, avand 68% acuratete. 
+Dintre toate modelele testate cel mai bun este variant ace foloseste Decision Tree pe un dataset preprocesat, la acesta am obtinut o acuratete de 75%,  al doilea cel muai bun model fiind cel cu Logistic Regression pe acelasi dataset, avand 68% acuratete. 
 
 Pentru procesare am selectat toate analizele unui pacient sa se afle pe o singura linie si am selectat doar parametrii ce au maxim 75% valori nule din numarul total. Am remarcat ca acesta este cel mai efficient dintre cele 3 variante incercate (25% NAN, 50% NAN, 75% NAN). Astfel am ajuns la un dataset cu 363 de pacienti cu 389 de parametri
 
