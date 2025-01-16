@@ -61,12 +61,3 @@ Dintre toate modelele testate cel mai bun este variant ace foloseste Decision Tr
 Pentru procesare am selectat toate analizele unui pacient sa se afle pe o singura linie si am selectat doar parametrii ce au maxim 75% valori nule din numarul total. Am remarcat ca acesta este cel mai efficient dintre cele 3 variante incercate (25% NAN, 50% NAN, 75% NAN). Astfel am ajuns la un dataset cu 363 de pacienti cu 389 de parametri
 
 Aceasta abordare ne permite sa ignoram parametrii care nu influenteaza rezultatul (vaccine_response) si sa ne folosim efficient de datele relevante pentru a prezice cat mai precis un rezultat.
-
-
-
-## TODO
-* Matrice de confuzie 
-* Precisie pe modele, nu doar acuratete
-* pentru modelul bun analiza pe fiecare pacient testat (pentru medici sa analizeze deciziile proaste)
-* pe modelul dt3 de rulat o data cu toti parametrii si dupa acelasi model trebuie reantrenat fara parametrii neimprtanti
-* demo / prezentare powerpoint
